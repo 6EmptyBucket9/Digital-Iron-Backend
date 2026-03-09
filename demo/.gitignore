@@ -38,3 +38,113 @@ out/
 
 ### Kotlin ###
 .kotlin
+# ========================
+# VS Code
+# ========================
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# ========================
+# Kotlin / JVM
+# ========================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# ========================
+# Spring Boot
+# ========================
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ========================
+# Maven
+# ========================
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
+
+# ========================
+# IntelliJ IDEA (optional)
+# ========================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ========================
+# OS
+# ========================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+application-secret.properties
+application-secret.yml
+*.p12
+*.jks
+*.keystore
+*.pem
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+spring.log
+
+# ========================
+# Testing & Coverage
+# ========================
+/test-results/
+/coverage/
+*.exec
