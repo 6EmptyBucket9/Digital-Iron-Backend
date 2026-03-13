@@ -8,9 +8,9 @@ import java.util.Optional
 @Repository
 interface TrainingSplitRepository : JpaRepository<TrainingSplit, Long> {
 
-    // Get the user's (first) active split
     fun findFirstByUserId(userId: Long): Optional<TrainingSplit>
 
-    // Check if user has any split
+    fun findAllByUserId(userId: Long): List<TrainingSplit>
+
     fun existsByUserId(userId: Long): Boolean
 }

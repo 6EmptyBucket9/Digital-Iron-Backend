@@ -13,23 +13,24 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+
 @Configuration
 class SecurityConfig(
     private val userDetailsService: UserDetailsService,
     private val jwtAuthFilter: JwtAuthenticationFilter
 ) {
-
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
         http
             .csrf { it.disable() }
             .authorizeHttpRequests {
-                it.requestMatchers("/api/v1/auth/**").permitAll()   // login/register open
-                it.anyRequest().authenticated()                    // alles anders vereist JWT
+                it.requestMatchers("/api/v1/auth/**").permitAll()
+                it.requestMatchers("/error").permitAll()
+                it.requestMatchers("/error/**").permitAll()
+                it.anyRequest().authenticated()
             }
             .authenticationProvider(authenticationProvider())
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter::class.java)
-
         return http.build()
     }
 
