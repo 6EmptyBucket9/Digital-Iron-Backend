@@ -19,4 +19,6 @@ data class TrainingDay(
 
     @Column(nullable = false)
     val name: String              // e.g. "Push", "Pull", "Legs"
+
+    
 )

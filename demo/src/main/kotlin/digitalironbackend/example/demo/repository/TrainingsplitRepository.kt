@@ -13,4 +13,5 @@ interface TrainingSplitRepository : JpaRepository<TrainingSplit, Long> {
     fun findAllByUserId(userId: Long): List<TrainingSplit>
 
     fun existsByUserId(userId: Long): Boolean
+        fun findByIdAndUserId(id: Long, userId: Long): TrainingSplit?
 }
